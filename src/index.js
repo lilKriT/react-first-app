@@ -43,7 +43,11 @@ const Title = () => {
 };
 
 const Author = () => {
-  return <h4>James Clear</h4>;
+  return (
+    <h4 style={{ color: "#618d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+      James Clear
+    </h4>
+  );
 };
 
 ReactDOM.render(<BookList />, document.getElementById("root"));
