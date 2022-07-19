@@ -4,49 +4,44 @@ import ReactDOM from "react-dom";
 // CSS
 import "./index.css";
 
+// vars
+const firstBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL604_SR604,400_.jpg",
+  title:
+    "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+  author: "James Clear",
+};
+
+const secondBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/81l17H47TJL._AC_UL604_SR604,400_.jpg",
+  title: "It Starts with Us: A Novel",
+  author: "Colleen Hoover",
+};
+
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={props.img} alt=""></img>
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
     </article>
-  );
-};
-
-const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL604_SR604,400_.jpg"
-      alt=""
-    ></img>
-  );
-};
-
-const Title = () => {
-  return (
-    <h1>
-      Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones
-    </h1>
-  );
-};
-
-const Author = () => {
-  return (
-    <h4 style={{ color: "#618d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-      James Clear
-    </h4>
   );
 };
 
